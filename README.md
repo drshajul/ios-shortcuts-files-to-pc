@@ -41,3 +41,13 @@ You may need to download required codecs to your computer to view your files.
 You can do other shortcuts that can send other file types from IPhone's "Files" application. Its up to your imagination.
 - Note: Transfer stops as soon as iPhone screen goes off. You need to keep the screen on while you are transfering too many photos or huge videos.
 - Note: To make large amount of photo/video transfer 'Allow Sharing Large Amounts of Data' needs to be turned on from 'Settings -> Shortcuts -> Advanced' screen.
+
+## Compiling Hints
+VS Code with [DotNet SDK](https://dotnet.microsoft.com/en-us/download) and `C# Dev Kit` extension is required.
+Then from VS Code commands pallete, `.NET: Generate Assets for Build and Debug` command.
+Confirm everything is in order with `dotnet --version`
+You can then build debug with `dotnet build` and release with `dotnet publish`.
+For different architecture (eg. Raspberry Pi 4 with arm64), you can build with `dotnet publish --runtime linux-arm64 --self-contained` and copy the `publish` directory with scp [like so](https://learn.microsoft.com/en-us/dotnet/iot/deployment) 
+
+## Credits
+Fork from [bariseksi](https://github.com/bariseksi/iphone-shortcuts-media-transfer)
