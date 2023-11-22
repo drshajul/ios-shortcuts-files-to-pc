@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 bin/
 obj/
-/ShortcutsListener/.vscode
+.vscode

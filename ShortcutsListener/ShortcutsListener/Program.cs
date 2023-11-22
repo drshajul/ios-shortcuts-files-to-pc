@@ -43,6 +43,21 @@ namespace ShortcutsListener
                         case "quicktime": //ios puts video/quicktime content-type header for their video files.
                             fileExtention = "mov";
                             break;
+                        case "javascript":
+                            fileExtention = "js";
+                            break;
+                        case "mpeg":
+                            fileExtention = "mp3";
+                            break;
+                        case "svg+xml":
+                            fileExtention = "svg";
+                            break;
+                        case "wave":
+                            fileExtention = "wav";
+                            break;
+                        case "x-www-form-urlencoded":
+                            fileExtention = "txt";
+                            break;
                         default:
                             break;
                     }
