@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Text;
 
 namespace ShortcutsListener
@@ -74,5 +75,39 @@ namespace ShortcutsListener
         public const string ContentType_Video_MP4 = "video/mp4";
         public const string ContentType_Video_MOV = "video/quicktime";
         public const string ContentType_text_HTML = "text/html";
+    }
+
+    public static class MyNetworkDetails
+    {
+        public static void GetIP() {
+        NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+
+        foreach (NetworkInterface networkInterface in networkInterfaces)
+        {
+            if (networkInterface.OperationalStatus == OperationalStatus.Up)
+            {
+                GatewayIPAddressInformationCollection gatewayAddresses = networkInterface.GetIPProperties().GatewayAddresses;
+
+                if (gatewayAddresses.Count > 0)
+                {
+                    // Console.WriteLine("Interface: " + networkInterface.Description);
+
+                    // Console.WriteLine("Default Gateway:");
+                    // foreach (GatewayIPAddressInformation gatewayAddress in gatewayAddresses)
+                    // {
+                    //     Console.WriteLine($"  Gateway: {gatewayAddress.Address}");
+                    // }
+
+                    Console.WriteLine("IP Addresses:");
+
+                    foreach (UnicastIPAddressInformation ip in networkInterface.GetIPProperties().UnicastAddresses)
+                    {
+                        Console.WriteLine($"  IP Address: {ip.Address}");
+                    }
+
+                }
+            }
+        }
+        }
     }
 }

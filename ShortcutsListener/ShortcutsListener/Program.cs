@@ -39,11 +39,9 @@ namespace ShortcutsListener
 
             }
             var port = 2560;
-            Console.Write("ShortcutsListener " + version + "\n=========================\n");
+            Console.Write("ShortcutsListener " + version + "\n=======================\n");
             Console.Write("Saving to folder : " + folder + "\nDifferent folder can be specified in arguments\n");
-            // get current IP address
-            var ipAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork)?.ToString();
-            Console.WriteLine($"Current IP Address: {ipAddress}");
+            MyNetworkDetails.GetIP();
             var server = new TcpListener(IPAddress.Any, port);
             server.Start();
 
