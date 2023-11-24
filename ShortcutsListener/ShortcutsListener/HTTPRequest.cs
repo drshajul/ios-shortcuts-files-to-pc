@@ -62,6 +62,7 @@ namespace ShortcutsListener
         public const string ContentType = "content-type";
         public const string FileName = "filename";
         public const string ContentLength = "content-length";
+        public const string Clipboard = "clipboard";
     }
 
     public static class HTTPReqHeaderValue

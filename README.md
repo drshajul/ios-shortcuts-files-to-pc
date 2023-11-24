@@ -1,44 +1,16 @@
-# iphone-shortcuts-media-transfer
-Directly transfer your photo, video or any media to any PC wirelessly over the lan via IPhone's built-in Shortcuts application with Http Post request without any necessity of 3rd party drive/web/internet services. 
+# iPhone Copy to PC Shortcut Helper
+Directly transfer your files, photos, video or any media to any PC or Linux wirelessly over the lan via IPhone's built-in Shortcuts application with Http Post request without any necessity of 3rd party drive/web/internet services. 
+Also, one way **Clipboard** sync for text! 
 
 ## How To Make It Work
-Your IPhone and the PC you want to transfer, both must be in the same network.
-First you need to compile the "ShortcutsListener" C# .net project and run the application(server) in windows or linux.
-(compiled version exists for windows users under "Releases").
-You need to create a "shortcut" from IPhone's built-in Shortcuts application by tapping + sign.
-You can think "shortcut" as a kind of script runs in IPhone to let us send media files to our server.
+1. Your IPhone and the PC you want to transfer, both must be in the same network.
 
-<p align="left">
-  <img src="images/img_001.jpeg" width="350">
-</p>
+2. **Download** and run "ShortcutsListener" from [Releases](github.com/shajul/ios-shortcuts-files-to-pc/releases/latest/) for Windows users **OR** You can **Compile** the "ShortcutsListener" C# .net project and run the application(server)
 
+3. **Install Shortcut** from [RoutineHub](https://routinehub.co/shortcut/17314/). Configure the shortcut with the ip address shown in the console on PC.
 
+All selected files, photos and videos will be transfered to PC. Or you can use it from the share sheet.
 
-then actions are seen below needs to be added.
-
-- Add the "URL" action and set the IP address of your computer and the port (default port is set to 2560 in the server app).
-If your pc has a IPAddress of 192.168.1.10 then the "URL" action should be http://192.168.1.10:2560 the number after the colon is the port number.
-- Add the "Select photos" action with "Select Multiple" option turned on and "Include" option set to "All". This action opens the photo app of your phone and lets you select photos or videos when you run the completed shortcut.
-- Since "Select photos" returns "Photos" variable that contains more than one media we need to iterate each of them by adding "Repeat with Each" action.
-- Inside the "Repeat with Each" action "Get contents of" action needs to be added. This is the action actually does the job.
-<p align="left">
-  <img src="images/img_002.png" width="350">
-</p>
-
-"Get contents of" action is the action that makes the HTTP request.
-Configure the contents of the "Get contents of" action like below.
-- Set the HTTP request method as POST.
-- "filename" header must be added to the HTTP request and "Repeated Item" needs to be pointed in order to get filename.
-- You need to set the URL of the "Get contents of" action to the url you added previously.
-<p align="left">
-  <img src="images/img_003.png" width="350">
-</p>
-
-Now you can start the server and then run the shortcut.
-All selected photos and videos will be transfered to PC.
-You may need to download required codecs to your computer to view your files.
-
-You can do other shortcuts that can send other file types from IPhone's "Files" application. Its up to your imagination.
 - Note: Transfer stops as soon as iPhone screen goes off. You need to keep the screen on while you are transfering too many photos or huge videos.
 - Note: To make large amount of photo/video transfer 'Allow Sharing Large Amounts of Data' needs to be turned on from 'Settings -> Shortcuts -> Advanced' screen.
 
@@ -50,4 +22,4 @@ You can then build debug with `dotnet build` and release with `dotnet publish`.
 For different architecture (eg. Raspberry Pi 4 with arm64), you can build with `dotnet publish --runtime linux-arm64 --self-contained` and copy the `publish` directory with scp [like so](https://learn.microsoft.com/en-us/dotnet/iot/deployment) 
 
 ## Credits
-Fork from [bariseksi](https://github.com/bariseksi/iphone-shortcuts-media-transfer)
+Fork from [bariseksi](https://github.com/bariseksi/iphone-shortcuts-media-transfer), merge from [legend-is-alive](https://github.com/legend-is-alive/iphone-shortcuts-media-transfer)
