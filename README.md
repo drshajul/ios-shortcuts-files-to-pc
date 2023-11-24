@@ -1,13 +1,12 @@
 # iPhone Copy to PC Shortcut Helper
-Directly transfer your files, photos, video or any media to any PC or Linux wirelessly over the lan via IPhone's built-in Shortcuts application with Http Post request without any necessity of 3rd party drive/web/internet services. 
+Directly transfer your files, photos, video or any media to any PC or Linux wirelessly over the lan via iPhone's built-in Shortcuts application with Http Post request without any necessity of 3rd party drive/web/internet services. 
 Also, one way **Clipboard** sync for text! 
 
 ## How To Make It Work
 1. Your IPhone and the PC you want to transfer, both must be in the same network.
-
-2. **Download** and run "ShortcutsListener" from [Releases](github.com/shajul/ios-shortcuts-files-to-pc/releases/latest/) for Windows users **OR** You can **Compile** the "ShortcutsListener" C# .net project and run the application(server)
-
-3. **Install Shortcut** from [RoutineHub](https://routinehub.co/shortcut/17314/). Configure the shortcut with the ip address shown in the console on PC.
+2. Install [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if not already installed.
+3. **Download** and run "ShortcutsListener" from [Releases](https://github.com/shajul/ios-shortcuts-files-to-pc/releases/latest/) for Windows users **OR** You can **Compile** the "ShortcutsListener" C# .net project and run the application(server)
+4. **Install Shortcut** from [RoutineHub](https://routinehub.co/shortcut/17314/). Configure the shortcut with the ip address shown in the console on PC.
 
 All selected files, photos and videos will be transfered to PC. Or you can use it from the share sheet.
 
