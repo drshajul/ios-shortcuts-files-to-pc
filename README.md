@@ -5,7 +5,7 @@ Also, one way **Clipboard** sync for text!
 ## How To Make It Work
 1. Your IPhone and the PC you want to transfer, both must be in the same network.
 
-2. **Download** and run "ShortcutsListener" from [Releases](github.com/shajul/ios-shortcuts-files-to-pc/releases/latest/) for Windows users **OR** You can **Compile** the "ShortcutsListener" C# .net project and run the application(server)
+2. **Download** and run "ShortcutsListener" from [Releases](https://github.com/shajul/ios-shortcuts-files-to-pc/releases/latest/) for Windows users **OR** You can **Compile** the "ShortcutsListener" C# .net project and run the application(server)
 
 3. **Install Shortcut** from [RoutineHub](https://routinehub.co/shortcut/17314/). Configure the shortcut with the ip address shown in the console on PC.
 
