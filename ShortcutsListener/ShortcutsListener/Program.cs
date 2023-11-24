@@ -8,6 +8,7 @@ namespace ShortcutsListener
     {
         private static byte[] responseBytes = Encoding.ASCII.GetBytes(HTTPRequest.BasicResponse);
         private static byte[] msg = new byte[10000];
+        private static string version = "1.0.1"; 
 
         [STAThread]
         static void Main(string[] args)
@@ -38,6 +39,7 @@ namespace ShortcutsListener
 
             }
             var port = 2560;
+            Console.Write("ShortcutsListener " + version + "\n=========================\n");
             Console.Write("Saving to folder : " + folder + "\nDifferent folder can be specified in arguments\n");
             // get current IP address
             var ipAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork)?.ToString();
